@@ -4,7 +4,8 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweet = Tweet.new
+    @tweets = Tweet.page
   end
 
   # GET /tweets/1
@@ -25,6 +26,7 @@ class TweetsController < ApplicationController
   # POST /tweets.json
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.user = current_user
 
     respond_to do |format|
       if @tweet.save
