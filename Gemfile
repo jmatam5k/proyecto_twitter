@@ -72,4 +72,7 @@ gem 'jquery-rails'
 #kaminari
 gem 'kaminari'
 
+#fontawesome
+gem "font-awesome-rails"
+
 

@@ -13,7 +13,7 @@
     <div class="tweet">
       <div class="tweet--header">
         <%= image_tag "#{tweet.user.image_url}", class: "tweet--user-image" %>
-        <span class="tweet--username"><%= tweet.user.name %></span> •
+        <span class="tweet--username"><%= tweet.user.name %></span>
         <%= link_to distance_of_time_in_words(Time.now, tweet.created_at), tweet_path(tweet.id), class: "tweet--date" %>
       </div>
       <div class="tweet--content">
@@ -23,7 +23,8 @@
          <% if user_signed_in? %>
         <hr>
         <div>
-          <%= link_to "#{tweet.total_likes} Me Gusta", likes_path(tweet.id), method: :post, class: "tweet--date" %> •
+          <%= link_to "#{tweet.total_likes} Me Gusta", likes_path(tweet.id), method: :post, class: "tweet--date" %> 
+         
         </div>
         <hr>
         <% end %>
